@@ -28,14 +28,14 @@ namespace CreatePreApproval
         static void Main(string[] args)
         {
 
-            bool isSandbox = false;
+            bool isSandbox = true;
 
             EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 
             try
             {
 
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 // Instantiate a new preApproval request
                 PreApprovalRequest preApproval = new PreApprovalRequest();

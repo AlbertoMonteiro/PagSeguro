@@ -34,7 +34,7 @@ namespace SearchTransactionByCode
             try
             {
 
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 // Definindo a data de ínicio da consulta 
                 DateTime initialDate = new DateTime(2014, 07, 01, 08, 50, 0);

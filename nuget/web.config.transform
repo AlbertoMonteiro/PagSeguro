@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <appSettings>
+        <add key="PagSeguro.Payment" value="https://ws.pagseguro.uol.com.br/v2/checkout" xdt:Transform="Insert"/>
+		<add key="PagSeguro.PaymentRedirect" value="https://pagseguro.uol.com.br/v2/checkout/payment.html" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Notification" value="https://ws.pagseguro.uol.com.br/v2/transactions/notifications" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Search" value="https://ws.pagseguro.uol.com.br/v2/transactions" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApproval" value="https://ws.pagseguro.uol.com.br/v2/pre-approvals/request" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApprovalRedirect" value="https://pagseguro.uol.com.br/v2/pre-approvals/request.html" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApprovalNotification" value="https://ws.pagseguro.uol.com.br/v2/pre-approvals/notifications" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApprovalSearch" value="https://ws.pagseguro.uol.com.br/v2/pre-approvals" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApprovalCancel" value="https://ws.pagseguro.uol.com.br/v2/pre-approvals/cancel" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.PreApprovalPayment" value="https://ws.pagseguro.uol.com.br/v2/pre-approvals/payment" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Email" value="" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Token" value="" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Sandbox.Email" value="." xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Sandbox.Token" value="" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.LibVersion" value="2.1.1" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.FormUrlEncoded" value="application/x-www-form-urlencoded" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.Encoding" value="ISO-8859-1" xdt:Transform="Insert"/>
+	    <add key="PagSeguro.RequestTimeout" value="10000" xdt:Transform="Insert"/>        
+    </appSettings>
+</configuration>

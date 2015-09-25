@@ -27,14 +27,14 @@ namespace CreatePreApprovalPaymentCharge
         static void Main(string[] args)
         {
 
-            bool isSandbox = false;
+            bool isSandbox = true;
 
             EnvironmentConfiguration.ChangeEnvironment(isSandbox);
 
             try
             {
 
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 // Instantiate a new payment request
                 PaymentRequest payment = new PaymentRequest();
@@ -49,8 +49,8 @@ namespace CreatePreApprovalPaymentCharge
                 payment.Reference = "REF1234";
 
                 // Sets the previous preApproval code
-                payment.PreApprovalCode = "3DFAD3123412340334A96F9136C38804";
-                
+                payment.PreApprovalCode = "ACF8C1FA1F1F1ED3342F0FB4B86DE5F8";
+
                 string preApprovalTransactionCode = PreApprovalService.CreatePreApprovalPaymentRequest(credentials, payment);
 
                 Console.WriteLine(preApprovalTransactionCode);

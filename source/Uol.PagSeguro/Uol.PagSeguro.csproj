@@ -115,7 +115,7 @@
     <Compile Include="XmlParse\ItemSerializer.cs" />
     <Compile Include="XmlParse\ErrorSerializer.cs" />
     <Compile Include="XmlParse\ErrorsSerializer.cs" />
-    <Compile Include="XmlParse\PagSeguroConfigSerializer.cs" />
+    <Compile Include="Resources\PagSeguroConfigurationManager.cs" />
     <Compile Include="XmlParse\PaymentMethodSerializer.cs" />
     <Compile Include="XmlParse\PaymentSerializer.cs" />
     <Compile Include="XmlParse\PaymentRequestResponseSerializer.cs" />

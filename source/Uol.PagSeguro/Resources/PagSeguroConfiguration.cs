@@ -13,12 +13,8 @@
 //   limitations under the License.
 
 using System;
-using System.Xml;
 using Uol.PagSeguro.Domain;
 using Uol.PagSeguro.XmlParse;
-using System.Reflection;
-using System.Diagnostics;
-using System.Web;
 
 namespace Uol.PagSeguro.Resources
 {
@@ -27,263 +23,110 @@ namespace Uol.PagSeguro.Resources
     /// </summary>
     public static class PagSeguroConfiguration
     {
-        //PagSeguro .NET Library Tests
-        private const string urlXmlConfiguration = ".../.../Configuration/PagSeguroConfig.xml";
-
-        //Website
-        //private static string urlXmlConfiguration = HttpRuntime.AppDomainAppPath + "PagSeguroConfig.xml";
-
-        private static string _moduleVersion;
-        private static string _cmsVersion;
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
+        /// 
+        public static AccountCredentials Credentials() => PagSeguroConfigurationManager.GetAccountCredentials();
 
         /// <summary>
         /// 
         /// </summary>
-        public static AccountCredentials Credentials(bool sandbox)
-        {
-            return PagSeguroConfigSerializer.GetAccountCredentials(LoadXmlConfig(), sandbox);
-        }
+        public static string ModuleVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public static string UrlXmlConfiguration
-        {
-            get
-            {
-                return urlXmlConfiguration;
-            }
-        }
+        public static string CmsVersion { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public static string ModuleVersion
-        {
-            get
-            {
-                return _moduleVersion;
-            }
-
-            set
-            {
-                _moduleVersion = value;
-            }
-        }
+        public static string LanguageEngineDescription => Environment.Version.ToString();
 
         /// <summary>
         /// 
         /// </summary>
-        public static string CmsVersion
-        {
-            get
-            {
-                return _cmsVersion;
-            }
-
-            set
-            {
-                _cmsVersion = value;
-            }
-        }
+        public static Uri NotificationUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.Notification));
 
         /// <summary>
         /// 
         /// </summary>
-        public static string LanguageEngineDescription
-        {
-            get
-            {
-                return Environment.Version.ToString();
-            }
-        }
+        public static Uri PaymentUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.Payment));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri NotificationUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.Notification));
-            }
-        }
+        public static Uri PaymentRedirectUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PaymentRedirect));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PaymentUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.Payment));
-            }
-        }
+        public static Uri SearchUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.Search));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PaymentRedirectUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PaymentRedirect));
-            }
-        }
+        public static Uri PreApprovalUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApproval));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri SearchUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.Search));
-            }
-        }
+        public static Uri PreApprovalRedirectUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApprovalRedirect));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApproval));
-            }
-        }
+        public static Uri PreApprovalNotificationUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApprovalNotification));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalRedirectUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalRedirect));
-            }
-        }
+        public static Uri PreApprovalSearchUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApprovalSearch));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalNotificationUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalNotification));
-            }
-        }
+        public static Uri PreApprovalCancelUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApprovalCancel));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalSearchUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalSearch));
-            }
-        }
+        public static Uri PreApprovalPaymentUri => new Uri(GetUrlValue(PagSeguroConfigurationManager.PreApprovalPayment));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalCancelUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalCancel));
-            }
-        }
+        public static int RequestTimeout => Convert.ToInt32(GetDataConfiguration(PagSeguroConfigurationManager.RequestTimeout));
 
         /// <summary>
         /// 
         /// </summary>
-        public static Uri PreApprovalPaymentUri
-        {
-            get
-            {
-                return new Uri(GetUrlValue(PagSeguroConfigSerializer.PreApprovalPayment));
-            }
-        }
+        public static string FormUrlEncoded => GetDataConfiguration(PagSeguroConfigurationManager.FormUrlEncoded);
 
         /// <summary>
         /// 
         /// </summary>
-        public static int RequestTimeout
-        {
-            get 
-            {
-                return Convert.ToInt32(GetDataConfiguration(PagSeguroConfigSerializer.RequestTimeout));
-            }
-        }
+        public static string Encoding => GetDataConfiguration(PagSeguroConfigurationManager.Encoding);
 
         /// <summary>
         /// 
         /// </summary>
-        public static string FormUrlEncoded
-        {
-            get
-            {
-                return GetDataConfiguration(PagSeguroConfigSerializer.FormUrlEncoded);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string Encoding
-        {
-            get
-            {
-                return GetDataConfiguration(PagSeguroConfigSerializer.Encoding);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string LibVersion
-        {
-            get
-            {
-                return GetDataConfiguration(PagSeguroConfigSerializer.LibVersion);
-            }
-        }
+        public static string LibVersion => GetDataConfiguration(PagSeguroConfigurationManager.LibVersion);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        private static string GetUrlValue(string url)
-        {
-            return PagSeguroConfigSerializer.GetWebserviceUrl(LoadXmlConfig(), url);
-        }
+        private static string GetUrlValue(string url) => PagSeguroConfigurationManager.GetWebserviceUrl(url);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        private static string GetDataConfiguration(string data)
-        {
-            return PagSeguroConfigSerializer.GetDataConfiguration(LoadXmlConfig(), data);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private static XmlDocument LoadXmlConfig()
-        {
-            XmlDocument xml = new XmlDocument();
-            using (xml as IDisposable)
-            {
-                xml.Load(urlXmlConfiguration);
-            }
-            return xml;
-        }
+        private static string GetDataConfiguration(string data) => PagSeguroConfigurationManager.GetDataConfiguration(data);
     }
 }

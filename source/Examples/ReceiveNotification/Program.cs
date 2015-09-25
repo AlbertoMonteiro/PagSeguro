@@ -33,7 +33,7 @@ namespace ReceiveNotification
             try
             {
 
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 // TODO: Substitute the code below with a notification code for your transaction. 
                 // You receive this notification code through a post on the URL that you specify in 

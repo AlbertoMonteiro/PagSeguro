@@ -25,6 +25,7 @@ using Uol.PagSeguro.Resources;
 using Uol.PagSeguro.Util;
 using Uol.PagSeguro.XmlParse;
 using System.Web;
+using PagSeguroConfiguration = Uol.PagSeguro.Resources.PagSeguroConfiguration;
 
 namespace Uol.PagSeguro.Service
 {

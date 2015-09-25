@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Uol.PagSeguro</id>
+    <version>1.0.0.0</version>
+    <authors>Fortes</authors>
+    <owners>Fortes</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PagSeguro Client API</description>
+    <releaseNotes>Permitindo carregamento das configurações do package apartir do arquivo .config</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+   </metadata>
+    <files>
+        <file src="..\source\Uol.PagSeguro\bin\Debug\Uol.PagSeguro.dll" target="lib\net45\Uol.PagSeguro.dll" />
+        <file src="..\source\Uol.PagSeguro\bin\Debug\Uol.PagSeguro.pdb" target="lib\net45\Uol.PagSeguro.pdb" />
+        <file src="web.config.transform" target="content"/>
+        <file src="app.config.transform" target="content"/>
+        
+    </files>
+</package>

@@ -34,7 +34,7 @@ namespace CreatePaymentWithPreApproval
             try
             {
 
-                AccountCredentials credentials = PagSeguroConfiguration.Credentials(isSandbox);
+                AccountCredentials credentials = PagSeguroConfiguration.Credentials();
 
                 // Instantiate a new payment request
                 PaymentRequest payment = new PaymentRequest();

@@ -26,6 +26,7 @@ using Uol.PagSeguro.Resources;
 using Uol.PagSeguro.XmlParse;
 using System.Collections.Specialized;
 
+
 namespace Uol.PagSeguro.Util
 {
     /// <summary>

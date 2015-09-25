@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <appSettings>
+        <add key="PagSeguro.Payment" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+		<add key="PagSeguro.PaymentRedirect" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Notification" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Search" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApproval" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApprovalRedirect" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApprovalNotification" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApprovalSearch" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApprovalCancel" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.PreApprovalPayment" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Email" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Token" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Sandbox.Email" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Sandbox.Token" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.LibVersion" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.FormUrlEncoded" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.Encoding" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+	    <add key="PagSeguro.RequestTimeout" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+    </appSettings>
+</configuration>
